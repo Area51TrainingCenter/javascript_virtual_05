@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex-col{
+            display: flex;
+        }
+        .flex-col div{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="">
+            <div>
+                <label for="">Nombre</label>
+                <input type="text" id="inp-nombre" value="Juan">
+            </div>
+            <div>
+                <label for="">Correo</label>
+                <input type="text" id="inp-correo" value="jramos@gmail.com">
+            </div>
+            <div>
+                <label for="">Facebook</label>
+                <input type="text" id="inp-facebook" value="facebook jc">
+            </div>
+            <div>
+                <label for="">Telefono</label>
+                <input type="text" id="inp-telefono" value="987987897">
+            </div>
+            <div>
+                <button id="registrar" type="button">Registrar</button>
+                
+            </div>
+        </form>
+        <hr>
+        <div>
+            <form action="">
+                Buscar
+                <input type="text" id="busar-nombre">
+                <button id="buscar_palabra"  type="button">Buscar</button>
+            </form>
+        </div>
+        <hr>
+        <div class="flex-col">
+        <div id="registro_usuarios">
+
+        </div>
+
+        <div id="busqueda_usuarios">
+
+        </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
