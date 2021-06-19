@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: arial;
+            
+        }
+        .item {
+            display: flex;
+            padding: 20px 10px;
+            align-items: center;
+            background-color: honeydew;
+            margin-bottom: 10px;
+        }
+        .foto-miniatura{
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            margin-right: 20px;
+        }
+        .filtros {
+            display: flex;
+        }
+        .filtros div{
+            background-color: lavender;
+            font-weight: bold;
+            padding: 15px;
+            text-align: center;
+            flex-grow: 1;
+            margin: 2px;
+            margin-bottom: 10px;
+        }
+        .inp-buscar{
+            width: 95%;
+            margin-bottom : 10px;
+            padding: 10px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="bloque-listado">
+        <div class="filtros">
+            <div onclick="filtar(1)">1</div>
+            <div onclick="filtar(2)">2</div>
+            <div onclick="filtar(3)">3</div>
+            <div onclick="filtar(4)">4</div>
+            <div onclick="filtar(5)">5</div>
+            <div onclick="filtar(6)">6</div>
+            <div onclick="filtar(7)">7</div>
+
+        </div>
+        <div>
+            <input id="inp-buscar-texto" class="inp-buscar" type="text" placeholder="BUSCAR">
+        </div>
+        
+        <div class="contenidos" id="listado">
+            
+        </div>
+    </div>
+    <div class="sitio hide" id="sitio">
+        <span onclick="regresar_listado()">Regresar</span>
+        <img id="foto-sitio" class="foto-sitio" src="" alt="">
+        <h2 id="nombre-sitio"></h2>
+    </div>
+
+    <script src="main.js"></script> 
+</body>
+</html>
