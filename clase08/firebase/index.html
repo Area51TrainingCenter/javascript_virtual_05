@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .modal-alias{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 1000;
+        display: none;
+    }
+.marco-modal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenido-modal{
+    width: 600px;
+    padding:30px;
+    background-color: white;
+    border-radius: 10px;
+}
+.hide{
+    display: none;
+}
+.lyt-chat{
+    display: flex;
+    min-height: 90vh;
+    margin-top: 20px;
+}
+.mensajes{
+    width: 70%;
+    
+
+    display: flex;
+    flex-direction: column;
+}
+.caja-mensjes{
+    width: 100%;
+    height: calc(90vh - 50px);
+    overflow-y: scroll;
+    align-self: stretch;
+  
+}
+.envio-mensaje form{
+    display: flex;
+}
+.envio-mensaje form input{
+margin-right: 10px;
+}
+.envio-mensaje form button{
+    width: 200px;
+}
+.usuarios{
+    padding-top: 40px;
+    width: 30%;
+    min-height: 100%;
+  
+}
+.mensaje-item{
+    padding: 10px;
+    background-color:#f1f1f1;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.show-modal{
+    display: block;
+}
+.mi-usuario
+{
+    color:red!important;
+    font-weight: bold;
+}
+</style>
+<body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<div class="container">
+   
+</div>
+<div id="modal-registro" class="modal-alias" >
+    <div class="marco-modal">
+        <div class="contenido-modal">
+            <p class="h4 mb-4">Registra tu Nombre y Alias para continuar</p>
+            <form action="" >
+                <div>
+                    <label for="" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="inp-nombre">
+                </div>
+                <div class="mt-3">
+                    <label for="" class="form-label">Alias</label>
+                    <input type="text" class="form-control" id="inp-alias">
+                </div>
+                <div class="mt-4">
+                    <button class="btn btn-danger">Cancelar</button>
+                    <button class="btn btn-primary" type="button" onclick="regitrarAlias()">Registrar</button>
+                </div>
+            </form>
+            <div id="mensaje-validacion"></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="lyt-chat">
+    <section class="mensajes">
+        <div id="mensajes-chat" class="caja-mensjes">
+           
+           
+
+        </div>
+        <div class="envio-mensaje">
+            <form action="#">
+                <input class="form-control" id="inp-mensaje" type="text">
+                <button type="button" class="btn btn-primary" onclick="enviarMensaje()">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+    <aside class="usuarios">
+        <button class="btn btn-danger mb-4" onclick="cerrar_sesion()">Cerrar Sesion</button>
+        <ul id="listado-usuario"  class="list-group"></ul>
+    </aside>
+    </div>
+</div>
+<script src="config.js"></script>
+<script src="clases.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

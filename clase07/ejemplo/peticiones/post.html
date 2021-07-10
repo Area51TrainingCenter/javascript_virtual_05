@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let xhr=new XMLHttpRequest();
+        xhr.open("POST","https://sminnova.com/recurso_clase/api/usuario/login");
+        let datos=new FormData();
+        
+        datos.append("correo","jramosmartin@gmail.com");
+        datos.append("password","123123");
+
+        let valores={
+            name="jc",
+            correo="adsas"
+        }
+
+        xhr.send();
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4)
+            {   
+                let res=JSON.parse(xhr.responseText);
+                
+                if(res[0].estado){
+                    //
+                    console.log(res[0].payload)
+                }
+                else{
+                    console.log("Los datos ingresados no son correctos")
+                }
+                //console.log(JSON.parse(xhr.responseText));
+            }
+        }
+
+    </script>
+</body>
+</html>

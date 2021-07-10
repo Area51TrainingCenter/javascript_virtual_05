@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #caja-mapa{
+            width: 100%;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Usando los mapas de google</h1>
+    <div id="caja-mapa"></div>
+
+ <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15607.346464572436!2d-77.09973508022462!3d-12.054760149999991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2spe!4v1624729805741!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>-->
+    <script src="main.js"></script>
+
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxCPQ-_0n5s69iDzgzxA2GPF1bneVPLMA&callback=crearMapa">
+    </script>
+    <script>
+        function crearMapa(lat , lng){
+            let div_mapa=document.getElementById("caja-mapa");
+            let config={
+                center: {lat:-12.0783357,lng:-77.0165744},
+                zoom:15,
+            }
+            /*
+            center:{
+                lat:-17,2000
+                lng:18,987
+            }
+            */
+            /*zoom: 
+            1 : world
+            5 : contienentes
+            10 : city 
+            15 : streets
+            20 : Buildings*/
+            //let mapa=google.maps.Map(elemento html donde vas a poner , propiedades del mapa)
+            let mapa_sitio_web=new google.maps.Map(div_mapa,config)
+           
+            let config_marker={
+                position: {lat:-12.0783357,lng:-77.0165744},
+                draggable:true,
+                //animation:google.maps.Animation.BOUNCE,
+                map:mapa_sitio_web,
+                icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+                
+            }
+            let marker1=new google.maps.Marker(config_marker)
+
+           let marker2=new google.maps.Marker({
+                draggable:true,
+                //animation:google.maps.Animation.BOUNCE,
+                position: {lat:-12.0767635,lng:-77.0235609},
+                map:mapa_sitio_web,
+                icon:"https://via.placeholder.com/30x30"
+            })
+
+        }
+    </script>
+
+</body>
+</html>
